@@ -1,0 +1,34 @@
+{
+  "name": "github-user-finder",
+  "version": "1.0.0",
+  "description": "GitHub Profile Finder",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open 'Google Chrome'",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxkalik/github-user-finder.git"
+  },
+  "author": "Max Kalik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxkalik/github-user-finder/issues"
+  },
+  "homepage": "https://github.com/maxkalik/github-user-finder#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.2",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  }
+}
