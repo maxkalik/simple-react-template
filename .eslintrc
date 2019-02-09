@@ -1,0 +1,33 @@
+{
+  "extends": ["airbnb-base"],
+  "parser": "babel-eslint",
+  "plugins": ["react", "jsx-a11y", "import"],
+  "rules": {
+    "no-unused-vars": 0,
+    "max-len": [1, 100, 2, { "ignoreComments": true }],
+    "react/prop-types": [2],
+    "react/prefer-es6-class": [1, "always"],
+    "class-methods-use-this": [1],
+    "comma-dangle": ["error", "never"],
+    "react/prefer-stateless-function": [1, { "ignorePureComponents": true }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-pascal-case": [1, { "allowAllCaps": false, "ignore": [] }],
+    "react/jsx-closing-bracket-location": [1],
+    "react/jsx-tag-spacing": [1],
+    "react/jsx-curly-spacing": [1],
+    "react/jsx-boolean-value": [1],
+    "jsx-a11y/alt-text": [1],
+    "jsx-a11y/img-redundant-alt": [1],
+    "jsx-a11y/aria-role": [1],
+    "react/no-array-index-key": [2],
+    "react/no-string-refs": [2],
+    "react/jsx-wrap-multilines": [2],
+    "react/self-closing-comp": [2],
+    "react/jsx-no-bind": [2],
+    "react/require-render-return": [2]
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}

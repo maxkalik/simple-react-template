@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class App extends Component {
-  render() {
-    return (
-      <div>Applications</div>
-    )
-  }
-}
+const App = props => <div>{props.someInfo}</div>;
 
 export default App;
+
+App.propTypes = {
+  someInfo: PropTypes.string
+};

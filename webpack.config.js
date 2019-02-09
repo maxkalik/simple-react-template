@@ -22,6 +22,7 @@ const cssPlugin = new MiniCssExtractPlugin({
 });
 
 module.exports = {
+  entry: ['@babel/polyfill', './src/'],
   optimization: {
     minimizer: [minimizeJs, minimizeCss]
   },
@@ -30,9 +31,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.(sa|sc|c)ss$/,
