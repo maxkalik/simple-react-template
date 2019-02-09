@@ -22,7 +22,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -33,7 +33,8 @@ module.exports = {
               localIdentName: '[local]_[hash:base64]',
               sourceMap: true
             }
-          }
+          },
+          'sass-loader'
         ]
       }
     ]
