@@ -1,7 +1,7 @@
 {
   "name": "simple-react-template",
   "version": "1.0.0",
-  "description": "GitHub Profile Finder",
+  "description": "A very primitive react template",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --progress --open",
