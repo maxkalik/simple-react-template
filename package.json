@@ -4,7 +4,7 @@
   "description": "GitHub Profile Finder",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --progress",
+    "start": "webpack-dev-server --mode development --progress --open",
     "build": "webpack --mode production --progress"
   },
   "repository": {
