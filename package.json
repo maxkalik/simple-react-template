@@ -1,22 +1,22 @@
 {
-  "name": "github-user-finder",
+  "name": "simple-react-template",
   "version": "1.0.0",
   "description": "GitHub Profile Finder",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --progress --open 'Google Chrome'",
+    "start": "webpack-dev-server --mode development --progress",
     "build": "webpack --mode production --progress"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxkalik/github-user-finder.git"
+    "url": "https://github.com/maxkalik/simple-react-template.git"
   },
   "author": "Max Kalik",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/maxkalik/github-user-finder/issues"
+    "url": "https://github.com/maxkalik/simple-react-template/issues"
   },
-  "homepage": "https://github.com/maxkalik/github-user-finder#readme",
+  "homepage": "https://github.com/maxkalik/simple-react-template#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
@@ -41,12 +41,7 @@
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.29.2",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14",
-    "@babel/polyfill": "^7.2.5",
-    "browserslist": "^4.4.1",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
