@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -23,6 +24,12 @@ const cssPlugin = new MiniCssExtractPlugin({
 
 module.exports = {
   entry: ['@babel/polyfill', './src/'],
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+    chunkFilename: '[id].js',
+    publicPath: ''
+  },
   optimization: {
     minimizer: [minimizeJs, minimizeCss]
   },
