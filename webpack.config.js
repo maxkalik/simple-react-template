@@ -35,6 +35,7 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -49,6 +50,10 @@ module.exports = {
           'postcss-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        loader: 'url-loader'
       }
     ]
   },
