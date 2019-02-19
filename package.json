@@ -4,8 +4,8 @@
   "description": "A very primitive react template",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --progress --open",
-    "build": "webpack --mode production --progress"
+    "start": "webpack-dev-server --mode development --progress --color --open",
+    "build": "webpack --mode production --progress --profile --color"
   },
   "repository": {
     "type": "git",
