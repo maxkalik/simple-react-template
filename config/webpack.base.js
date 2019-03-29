@@ -8,7 +8,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 const hashedModuleIds = new webpack.HashedModuleIdsPlugin();
 const cssPlugin = new MiniCssExtractPlugin({
-  filename: '[name].css'
+  filename: 'css/[name].css'
 });
 
 module.exports = {
