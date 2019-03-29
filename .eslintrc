@@ -1,7 +1,15 @@
 {
-  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb-base"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb-base"
+  ],
   "parser": "babel-eslint",
-  "plugins": ["react", "jsx-a11y", "import"],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
   "env": {
     "browser": true,
     "node": true
@@ -12,13 +20,19 @@
     "classes": true
   },
   "rules": {
-    "max-len": [1, 140, 2, { "ignoreComments": true }],
+    "no-console": [0],
+    "import/prefer-default-export": [0],
+    "max-len": [0],
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
     "react/prop-types": [2],
+    "react/display-name": [0],
     "react/prefer-es6-class": [1, "always"],
     "class-methods-use-this": [1],
     "comma-dangle": [1, "never"],
+    "implicit-arrow-linebreak": [1],
     "react/jsx-uses-react": [1],
-    "react/prefer-stateless-function": [1, { "ignorePureComponents": true }],
+    "react/prefer-stateless-function": [1],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-pascal-case": [1, { "allowAllCaps": false, "ignore": [] }],
     "react/jsx-closing-bracket-location": [1],
@@ -32,7 +46,10 @@
     "react/no-string-refs": [2],
     "react/jsx-wrap-multilines": [2],
     "react/self-closing-comp": [2],
-    "react/jsx-no-bind": [2],
-    "react/require-render-return": [2]
+    "react/jsx-no-bind": [0],
+    "react/require-render-return": [2],
+    "wrap-iife": [1, "inside"],
+    "func-names": [0],
+    "space-before-function-paren": [1, "never"]
   }
 }

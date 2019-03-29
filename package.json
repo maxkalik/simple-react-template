@@ -4,8 +4,9 @@
   "description": "A very primitive react template",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --progress --color --open",
-    "build": "webpack --mode production --progress --profile --color"
+    "start": "webpack-dev-server --config ./config/webpack.dev.js --mode development --progress --color --open",
+    "build": "npm run clean && webpack --config ./config/webpack.prod.js --progress --profile --color",
+    "clean": "rimraf build && mkdir build"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,8 @@
     "browserslist": "^4.4.1",
     "prop-types": "^15.6.2",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react-dom": "^16.8.1",
+    "rimraf": "^2.6.3",
+    "webpack-merge": "^4.2.1"
   }
 }
