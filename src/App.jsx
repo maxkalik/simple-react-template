@@ -9,7 +9,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ spinner: false }), 0);
+    setTimeout(() => this.setState({ spinner: false }), 1000);
   }
 
   render() {

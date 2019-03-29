@@ -46,10 +46,10 @@ html, body {
     font-size: 1.6rem;
   }
   a {
-    color: $link-color;
+    color: $primary-color;
     &:hover,
     &:active {
-      color: darken($link-color, 50%);
+      color: lighten($primary-color, 50%);
     }
   }
   .logo {

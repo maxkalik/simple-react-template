@@ -4,8 +4,8 @@
   "description": "A very primitive react template",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./config/webpack.dev.js --mode development --progress --color --open",
-    "build": "npm run lint && npm run clean && webpack --config ./config/webpack.prod.js --progress --profile --color",
+    "start": "webpack-dev-server --config ./config/webpack.dev.js --mode development --progress --open",
+    "build": "npm run lint && npm run clean && webpack --config ./config/webpack.prod.js --progress --profile",
     "lint": "eslint -c .eslintrc ./src --ext .jsx,.js",
     "clean": "rimraf build && mkdir build"
   },
