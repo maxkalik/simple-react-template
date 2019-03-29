@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './assets/images/logo-maxkalik.svg';
-import styles from './main.scss';
+import styles from './assets/styles/main.scss';
 
 export default class App extends Component {
   constructor(props) {

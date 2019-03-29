@@ -14,10 +14,17 @@
     "browser": true,
     "node": true
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "es6": true,
-    "classes": true
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "es6": true,
+      "classes": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
   },
   "rules": {
     "no-console": [0],
