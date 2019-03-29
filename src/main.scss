@@ -1,14 +1,59 @@
+@import './assets/styles/variables.scss';
+
 * {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
-$primary-color: gray;
+.clearfix {
+  zoom: 1;
+  &:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
 
 .main {
-  font-size: 24px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  text-align: center;
   h1 {
     color: $primary-color;
+    padding: 2rem;
+  }
+  p, a {
+    font-size: 1.6rem;
+  }
+  a {
+    color: $link-color;
+    &:hover,
+    &:active {
+      color: darken($link-color, 50%);
+    }
+  }
+  .logo {
+    padding-bottom: 2rem;
+    width: 5rem;
+    height: auto;
   }
 }
