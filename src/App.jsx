@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from './assets/images/logo-maxkalik.svg';
+import logo from './assets/images/svg/logo-maxkalik.svg';
 import styles from './assets/styles/main.scss';
 
 const app = () => {

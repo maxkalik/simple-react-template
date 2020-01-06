@@ -1,30 +1,46 @@
 const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const baseConfig = require('./webpack.base.js');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const minimizeJs = new UglifyJsPlugin({
-  cache: true,
-  parallel: true,
-  sourceMap: true
+const hashedModuleInsPlugin = new webpack.HashedModuleIdsPlugin();
+const miniCssPlugin = new MiniCssExtractPlugin({
+  filename: 'css/[name].css'
 });
-
-const minimizeCss = new OptimizeCSSAssetsPlugin({});
 
 module.exports = merge(baseConfig, {
   mode: 'production',
+  devtool: 'hidden-source-map',
   output: {
     path: path.resolve(__dirname, '../build'),
+    chunkFilename: 'js/chunk.[chunkhash].js',
     filename: 'js/[name].[contenthash].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css|.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      }
+    ]
   },
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all',
-      maxInitialRequests: Infinity,
-      minSize: 0
-    },
-    minimizer: [minimizeJs, minimizeCss]
-  }
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  },
+  plugins: [hashedModuleInsPlugin, miniCssPlugin]
 });

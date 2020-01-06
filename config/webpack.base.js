@@ -1,15 +1,12 @@
-const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: './public/index.html',
+  template: './src/index.html',
   filename: 'index.html'
 });
-const hashedModuleIds = new webpack.HashedModuleIdsPlugin();
-const cssPlugin = new MiniCssExtractPlugin({
-  filename: 'css/[name].css'
-});
+
+const faviconPlugin = new FaviconsWebpackPlugin('./src/assets/images/png/favicon.png');
 
 module.exports = {
   entry: ['@babel/polyfill', './src/index.jsx'],
@@ -21,33 +18,17 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.css$/,
-        exclude: /node_modules/,
+        test: /\.css|.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(sa|sc)ss$/,
-        exclude: /node_modules/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: '[local]_[hash:base64]',
-              sourceMap: true
+              modules: {
+                localIdentName: '[local]-[hash:base64:5]'
+              }
             }
           },
-          'postcss-loader',
           'sass-loader'
         ]
       },
@@ -58,7 +39,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: 'images/[name].[ext]',
+              name: 'images/[name].[ext]'
             }
           }
         ]
@@ -66,8 +47,8 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [{
-        loader: 'file-loader',
-        options: {
+          loader: 'file-loader',
+          options: {
             name: '[name].[ext]',
             outputPath: 'fonts/'
           }
@@ -78,5 +59,11 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
-  plugins: [htmlPlugin, cssPlugin, hashedModuleIds]
+  plugins: [
+    htmlPlugin,
+    faviconPlugin
+  ],
+  output: {
+    publicPath: '/'
+  }
 };
